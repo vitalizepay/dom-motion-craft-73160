@@ -30,7 +30,7 @@ const Footer = () => {
           className="text-center mb-12"
         >
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-accent">
-            2D creations Sourcing
+            2D CREATIONS
           </h3>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
             Precision. Partnership. Performance.
@@ -96,7 +96,7 @@ const Footer = () => {
           className="text-center"
         >
           <p className="text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} 2D creations Sourcing. All Rights Reserved.
+            © {new Date().getFullYear()} 2D CREATIONS. All Rights Reserved.
           </p>
           <p className="text-xs text-primary-foreground/40 mt-2">
             Member of Sedex UK | Committed to Sustainable Excellence
