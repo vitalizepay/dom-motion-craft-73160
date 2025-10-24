@@ -34,7 +34,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      content: "info@dominesourcing.com",
+      content: "Karthick@2dcreation.in",
     },
     {
       icon: Phone,

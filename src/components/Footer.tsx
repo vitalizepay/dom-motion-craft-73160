@@ -7,7 +7,7 @@ const Footer = () => {
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Mail, href: "mailto:info@dominesourcing.com", label: "Email" },
+    { icon: Mail, href: "mailto:Karthick@2dcreation.in", label: "Email" },
   ];
 
   return (
@@ -30,7 +30,7 @@ const Footer = () => {
           className="text-center mb-12"
         >
           <h3 className="text-3xl md:text-4xl font-bold mb-4 text-accent">
-            2D CREATIONS
+            2D Creation
           </h3>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
             Precision. Partnership. Performance.
@@ -96,7 +96,7 @@ const Footer = () => {
           className="text-center"
         >
           <p className="text-sm text-primary-foreground/60">
-            © {new Date().getFullYear()} 2D CREATIONS. All Rights Reserved.
+            © {new Date().getFullYear()} 2D Creation. All Rights Reserved.
           </p>
           <p className="text-xs text-primary-foreground/40 mt-2">
             Member of Sedex UK | Committed to Sustainable Excellence

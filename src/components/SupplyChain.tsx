@@ -39,7 +39,7 @@ const SupplyChain = () => {
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto mb-8" />
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto leading-relaxed">
-            DOMINE Sourcing manages every critical stage of the supply chain with professionalism, 
+            2D Creation manages every critical stage of the supply chain with professionalism, 
             transparency, and integrity.
           </p>
         </motion.div>
