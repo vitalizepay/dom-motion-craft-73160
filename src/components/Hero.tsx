@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/2d-creation-logo.png";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -26,6 +27,19 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
+        <motion.div
+          className="mb-8 flex justify-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img 
+            src={logo} 
+            alt="2D Creation Logo" 
+            className="w-64 md:w-80 lg:w-96 h-auto"
+          />
+        </motion.div>
+
         <motion.h1
           className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6"
           initial={{ opacity: 0, y: 30 }}
