@@ -53,11 +53,11 @@ const Certifications = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-6xl mx-auto"
+          className="max-w-7xl mx-auto"
         >
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             plugins={[
@@ -67,23 +67,19 @@ const Certifications = () => {
             ]}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-4">
               {certifications.map((cert, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
-                  <div className="p-4">
-                    <div className="flex items-center justify-center h-32 bg-card rounded-lg border-2 border-border hover:border-accent transition-colors duration-300 p-4">
-                      <img
-                        src={cert.image}
-                        alt={cert.name}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
+                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <div className="flex items-center justify-center h-40 md:h-48 bg-card rounded-lg border-2 border-border hover:border-accent transition-colors duration-300 p-6 md:p-8">
+                    <img
+                      src={cert.image}
+                      alt={cert.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex" />
-            <CarouselNext className="hidden md:flex" />
           </Carousel>
         </motion.div>
       </div>
