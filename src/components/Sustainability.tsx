@@ -82,7 +82,7 @@ const Sustainability = () => {
           className="bg-card/95 backdrop-blur-sm rounded-3xl p-10 md:p-16 border-2 border-accent/30 shadow-card mb-12"
         >
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-8">
-            <span className="font-bold text-accent">2D creations Sourcing</span>, a member of <span className="font-semibold">Sedex UK</span>, is committed to sustainability — maintaining a balance between progress and preserving natural resources.
+            <span className="font-bold">2D creations <span className="text-accent">Sourcing</span></span> is committed to sustainability — maintaining a balance between progress and preserving natural resources.
           </p>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
             We aim to build a purpose-driven business that positively impacts society and the environment.
