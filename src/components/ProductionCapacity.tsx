@@ -41,12 +41,19 @@ const ProductionCapacity = () => {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
           <StatCard
             icon={Factory}
             value="5M+"
             label="Pieces per Month"
             delay={0.3}
+            inView={inView}
+          />
+          <StatCard
+            icon={Factory}
+            value="20+"
+            label="Factories"
+            delay={0.35}
             inView={inView}
           />
           <StatCard
@@ -78,10 +85,10 @@ const ProductionCapacity = () => {
 
 const StatCard = ({ icon: Icon, value, label, delay, inView }: any) => {
   const [count, setCount] = useState(0);
-  const targetNumber = value === "5M+" ? 5 : 100;
+  const targetNumber = value === "5M+" ? 5 : value === "20+" ? 20 : 100;
 
   useEffect(() => {
-    if (inView && value === "5M+") {
+    if (inView && (value === "5M+" || value === "20+")) {
       let start = 0;
       const end = targetNumber;
       const duration = 2000;
@@ -130,6 +137,10 @@ const StatCard = ({ icon: Icon, value, label, delay, inView }: any) => {
           {value === "5M+" ? (
             <motion.h3 className="text-4xl md:text-5xl font-bold text-accent group-hover:glow-gold transition-all">
               {count}M+
+            </motion.h3>
+          ) : value === "20+" ? (
+            <motion.h3 className="text-4xl md:text-5xl font-bold text-accent group-hover:glow-gold transition-all">
+              {count}+
             </motion.h3>
           ) : (
             <h3 className="text-3xl md:text-4xl font-bold text-accent group-hover:glow-gold transition-all">

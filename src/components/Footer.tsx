@@ -98,9 +98,6 @@ const Footer = () => {
           <p className="text-sm text-primary-foreground/60">
             © {new Date().getFullYear()} 2D Creation. All Rights Reserved.
           </p>
-          <p className="text-xs text-primary-foreground/40 mt-2">
-            Member of Sedex UK | Committed to Sustainable Excellence
-          </p>
         </motion.div>
       </div>
 
