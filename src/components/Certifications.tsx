@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import * as React from "react";
 import {
   Carousel,
   CarouselContent,
@@ -22,6 +23,10 @@ const Certifications = () => {
     triggerOnce: true,
     threshold: 0.2,
   });
+
+  const plugin = React.useRef(
+    Autoplay({ delay: 2500, stopOnInteraction: false })
+  );
 
   const certifications = [
     { name: "Global Recycled Standard", image: globalRecycled },
@@ -60,11 +65,7 @@ const Certifications = () => {
               align: "center",
               loop: true,
             }}
-            plugins={[
-              Autoplay({
-                delay: 3000,
-              }),
-            ]}
+            plugins={[plugin.current]}
             className="w-full"
           >
             <CarouselContent className="-ml-4">
