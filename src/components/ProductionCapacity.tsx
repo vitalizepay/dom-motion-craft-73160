@@ -89,20 +89,17 @@ const StatCard = ({ icon: Icon, value, label, delay, inView }: any) => {
 
   useEffect(() => {
     if (inView && (value === "5M+" || value === "20+")) {
-      let start = 0;
+      let current = 1;
       const end = targetNumber;
-      const duration = 2000;
-      const increment = end / (duration / 16);
+      const stepDuration = value === "5M+" ? 200 : 100; // Faster for 20+
 
       const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
+        setCount(current);
+        current += 1;
+        if (current > end) {
           clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
         }
-      }, 16);
+      }, stepDuration);
 
       return () => clearInterval(timer);
     }
