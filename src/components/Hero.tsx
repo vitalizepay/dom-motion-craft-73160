@@ -41,8 +41,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          <p className="text-2xl md:text-3xl text-accent font-semibold tracking-wide">
-            Precision. Partnership. Performance.
+          <p className="text-2xl md:text-3xl text-accent font-semibold tracking-wide mb-4">
+            Apparels Sourcing
           </p>
           <motion.div
             className="h-1 bg-accent mt-4 mx-auto"
@@ -50,6 +50,9 @@ const Hero = () => {
             animate={{ width: "100%" }}
             transition={{ duration: 1, delay: 0.8 }}
           />
+          <p className="text-2xl md:text-3xl text-accent font-semibold tracking-wide mt-4">
+            Precision. Partnership. Performance.
+          </p>
         </motion.div>
 
         <motion.div
