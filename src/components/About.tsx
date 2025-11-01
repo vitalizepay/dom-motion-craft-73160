@@ -39,7 +39,7 @@ const About = () => {
           >
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
-                <span className="text-2xl font-semibold text-primary">2D creations Sourcing</span> is a leading apparel sourcing company providing knowledge-based costings, flexible volumes, shorter lead times, and real-time communication.
+                <span className="text-2xl font-semibold text-primary">2D creations</span> is a leading apparel sourcing company providing knowledge-based costings, flexible volumes, shorter lead times, and real-time communication.
               </p>
               <p className="text-lg text-foreground/90 mb-6 leading-relaxed">
                 Our experienced and dedicated teams ensure precise tracking and streamlined control from raw materials to finished garments.
