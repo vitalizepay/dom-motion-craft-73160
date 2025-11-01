@@ -62,25 +62,27 @@ const Certifications = () => {
         >
           <Carousel
             opts={{
-              align: "start",
+              align: "center",
               loop: true,
             }}
             plugins={[plugin.current]}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4 md:-ml-6">
               {certifications.map((cert, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <div className="flex items-center justify-center h-48 md:h-56 lg:h-64 bg-transparent p-4 md:p-6">
+                <CarouselItem key={index} className="pl-4 md:pl-6 basis-full md:basis-1/2 lg:basis-1/3">
+                  <div className="flex items-center justify-center min-h-[280px] md:min-h-[320px] lg:min-h-[360px] bg-card/50 backdrop-blur-sm rounded-2xl p-8 md:p-12 hover:bg-card/70 transition-all duration-300 hover:shadow-xl">
                     <img
                       src={cert.image}
                       alt={cert.name}
-                      className="w-full h-full object-contain hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full max-h-[240px] md:max-h-[280px] lg:max-h-[320px] object-contain hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
           </Carousel>
         </motion.div>
       </div>
