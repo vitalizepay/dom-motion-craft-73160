@@ -33,9 +33,9 @@ const ProductionCapacity = () => {
           className="bg-gradient-to-br from-card to-muted/30 rounded-3xl p-10 md:p-16 border-2 border-accent/20 shadow-card mb-16"
         >
           <p className="text-xl md:text-2xl text-foreground leading-relaxed mb-6">
-            Our facilities are equipped with <span className="font-bold text-accent">imported machines</span>, offering a production capacity of <span className="text-3xl font-bold text-accent">5 million pieces per month</span>.
+            Our facilities are equipped with imported machines, offering a production capacity of 5 million pieces per month.
           </p>
-          <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground leading-relaxed">
             With efficient workflow design and advanced vacuum table finishing, we ensure every garment meets top global standards.
           </p>
         </motion.div>
