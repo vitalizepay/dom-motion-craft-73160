@@ -66,14 +66,14 @@ const Certifications = () => {
             plugins={[plugin.current]}
             className="w-full"
           >
-            <CarouselContent className="-ml-4 md:-ml-6">
+            <CarouselContent className="-ml-6 md:-ml-8">
               {certifications.map((cert, index) => (
-                <CarouselItem key={index} className="pl-4 md:pl-6 basis-1/2 md:basis-1/4">
-                  <div className="flex items-center justify-center min-h-[220px] md:min-h-[260px] bg-transparent p-4 md:p-6">
+                <CarouselItem key={index} className="pl-6 md:pl-8 basis-1/2 md:basis-1/4">
+                  <div className="flex items-center justify-center min-h-[280px] md:min-h-[320px] bg-transparent p-6 md:p-8">
                     <img
                       src={cert.image}
                       alt={cert.name}
-                      className="w-full h-full max-h-[180px] md:max-h-[220px] object-contain hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full max-h-[240px] md:max-h-[280px] object-contain hover:scale-110 transition-transform duration-300"
                     />
                   </div>
                 </CarouselItem>
