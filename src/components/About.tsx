@@ -45,7 +45,7 @@ const About = () => {
                 Our experienced and dedicated teams ensure precise tracking and streamlined control from raw materials to finished garments.
               </p>
               <p className="text-lg text-foreground/90 leading-relaxed">
-                We collaborate closely with design and sales partners in the UK and Netherlands to deliver market-ready products.
+                We collaborate closely with our global design and sales partners to deliver market-ready products.
               </p>
             </div>
           </motion.div>

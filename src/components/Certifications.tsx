@@ -69,11 +69,11 @@ const Certifications = () => {
             <CarouselContent className="-ml-4 md:-ml-6">
               {certifications.map((cert, index) => (
                 <CarouselItem key={index} className="pl-4 md:pl-6 basis-1/2 md:basis-1/4">
-                  <div className="flex items-center justify-center min-h-[200px] md:min-h-[240px] bg-transparent p-6 md:p-8">
+                  <div className="flex items-center justify-center min-h-[220px] md:min-h-[260px] bg-transparent p-4 md:p-6">
                     <img
                       src={cert.image}
                       alt={cert.name}
-                      className="w-full h-full max-h-[160px] md:max-h-[200px] object-contain hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full max-h-[180px] md:max-h-[220px] object-contain hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                 </CarouselItem>
