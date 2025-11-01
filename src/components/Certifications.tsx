@@ -68,7 +68,7 @@ const Certifications = () => {
           >
             <CarouselContent className="-ml-6 md:-ml-8">
               {certifications.map((cert, index) => (
-                <CarouselItem key={index} className="pl-6 md:pl-8 basis-1/2 md:basis-1/4">
+                <CarouselItem key={index} className="pl-6 md:pl-8 basis-full md:basis-1/4">
                   <div className="flex items-center justify-center min-h-[280px] md:min-h-[320px] bg-transparent p-6 md:p-8">
                     <img
                       src={cert.image}
