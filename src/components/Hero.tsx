@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
-import { Shirt, Award, Gauge } from "lucide-react";
+import { Shirt, Award, Gauge, Factory } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/logo-2d.png";
 
 const Hero = () => {
   const [ref, inView] = useInView({
@@ -34,9 +35,11 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-            2D CREATION
-          </h1>
+          <img 
+            src={logo} 
+            alt="2D Creation Logo" 
+            className="h-32 md:h-48 mx-auto mb-6"
+          />
           <p className="text-2xl md:text-3xl text-accent font-semibold">
             Global Apparel Sourcing
           </p>
@@ -45,7 +48,7 @@ const Hero = () => {
         {/* Stats Grid */}
         <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -58,38 +61,24 @@ const Hero = () => {
             inView={inView}
           />
           <StatCard
-            icon={Shirt}
+            icon={Factory}
             value="20+"
-            label="Factory Partners"
+            label="Factories"
             delay={0.5}
-            inView={inView}
-          />
-          <StatCard
-            icon={Award}
-            value="1010"
-            label="Bangladesh"
-            delay={0.6}
-            inView={inView}
-          />
-          <StatCard
-            icon={Award}
-            value="1010"
-            label="Colombia"
-            delay={0.7}
             inView={inView}
           />
           <StatCard
             icon={Gauge}
             value="20+"
             label="Years Experience"
-            delay={0.8}
+            delay={0.6}
             inView={inView}
           />
           <StatCard
             icon={Award}
             value="100%"
-            label="Quality"
-            delay={0.9}
+            label="Quality Certified"
+            delay={0.7}
             inView={inView}
           />
         </motion.div>
