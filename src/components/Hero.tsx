@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowDown } from "lucide-react";
+import { useInView } from "react-intersection-observer";
+import { useState, useEffect } from "react";
+import { Shirt, Award, Gauge } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
       {/* Animated Background */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -18,89 +20,137 @@ const Hero = () => {
         transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
       >
         <div 
-          className="w-full h-full bg-cover bg-center"
+          className="w-full h-full bg-cover bg-center opacity-20"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/95 via-primary/80 to-primary/95" />
       </motion.div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-primary-foreground mb-6"
+      <div className="relative z-10 w-full px-6 max-w-7xl mx-auto py-20">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8 }}
         >
-          2D Creation
-        </motion.h1>
-
-        <motion.div
-          className="inline-block mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <p className="text-2xl md:text-3xl text-accent font-semibold tracking-wide mb-4">
-            Apparels Sourcing
-          </p>
-          <motion.div
-            className="h-1 bg-accent mt-4 mx-auto"
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1, delay: 0.8 }}
-          />
-          <p className="text-2xl md:text-3xl text-accent font-semibold tracking-wide mt-4">
-            Precision. Partnership. Performance.
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
+            2D CREATION
+          </h1>
+          <p className="text-2xl md:text-3xl text-accent font-semibold">
+            Global Apparel Sourcing
           </p>
         </motion.div>
 
+        {/* Stats Grid */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <StatCard
+            icon={Shirt}
+            value="3M+"
+            label="Pieces Monthly"
+            delay={0.4}
+            inView={inView}
+          />
+          <StatCard
+            icon={Shirt}
+            value="20+"
+            label="Factory Partners"
+            delay={0.5}
+            inView={inView}
+          />
+          <StatCard
+            icon={Award}
+            value="1010"
+            label="Bangladesh"
+            delay={0.6}
+            inView={inView}
+          />
+          <StatCard
+            icon={Award}
+            value="1010"
+            label="Colombia"
+            delay={0.7}
+            inView={inView}
+          />
+          <StatCard
+            icon={Gauge}
+            value="20+"
+            label="Years Experience"
+            delay={0.8}
+            inView={inView}
+          />
+          <StatCard
+            icon={Award}
+            value="100%"
+            label="Quality"
+            delay={0.9}
+            inView={inView}
+          />
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          className="text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          transition={{ duration: 0.8, delay: 1 }}
         >
-          <Button
-            onClick={() => scrollToSection("about")}
-            size="lg"
-            className="group relative overflow-hidden bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-gold hover:scale-105"
+          <button
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="bg-white text-primary px-10 py-4 rounded-lg text-xl font-bold hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            <span className="relative z-10">Explore More</span>
-            <div className="absolute inset-0 bg-primary/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
-          </Button>
-
-          <Button
-            onClick={() => scrollToSection("contact")}
-            size="lg"
-            variant="outline"
-            className="group border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:shadow-gold hover:scale-105"
-          >
-            Contact Us
-            <ArrowDown className="ml-2 h-5 w-5 group-hover:animate-bounce" />
-          </Button>
+            Get Quote
+          </button>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 10, 0] }}
-        transition={{ 
-          opacity: { delay: 1.5, duration: 0.5 },
-          y: { repeat: Infinity, duration: 2, ease: "easeInOut" }
-        }}
-      >
-        <div className="w-6 h-10 border-2 border-accent rounded-full flex items-start justify-center p-2">
-          <motion.div
-            className="w-1.5 h-3 bg-accent rounded-full"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
-          />
-        </div>
-      </motion.div>
     </section>
+  );
+};
+
+const StatCard = ({ icon: Icon, value, label, delay, inView }: any) => {
+  const [count, setCount] = useState(0);
+  const isNumber = value.includes("+") && !value.includes("M");
+  const targetNumber = isNumber ? parseInt(value) : 100;
+
+  useEffect(() => {
+    if (inView && isNumber) {
+      let current = 1;
+      const end = targetNumber;
+      const stepDuration = 100;
+
+      const timer = setInterval(() => {
+        setCount(current);
+        current += 1;
+        if (current > end) {
+          clearInterval(timer);
+        }
+      }, stepDuration);
+
+      return () => clearInterval(timer);
+    }
+  }, [inView, targetNumber, isNumber]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.5, delay }}
+      className="bg-white rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+    >
+      <div className="w-16 h-16 mb-4 bg-accent/20 rounded-xl flex items-center justify-center mx-auto">
+        <Icon className="w-8 h-8 text-accent" />
+      </div>
+      <h3 className="text-4xl md:text-5xl font-bold text-accent mb-2">
+        {isNumber ? `${count}+` : value}
+      </h3>
+      <p className="text-lg font-semibold text-primary">{label}</p>
+    </motion.div>
   );
 };
 
