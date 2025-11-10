@@ -4,7 +4,6 @@ import SupplyChain from "@/components/SupplyChain";
 import Services from "@/components/Services";
 import Sustainability from "@/components/Sustainability";
 import Certifications from "@/components/Certifications";
-import ProductionCapacity from "@/components/ProductionCapacity";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -17,7 +16,6 @@ const Index = () => {
       <Services />
       <Sustainability />
       <Certifications />
-      <ProductionCapacity />
       <Contact />
       <Footer />
     </div>
