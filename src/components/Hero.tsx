@@ -35,11 +35,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <img 
-            src={logo} 
-            alt="2D Creation Logo" 
-            className="h-32 md:h-48 mx-auto mb-6"
-          />
+          <div className="inline-block bg-white rounded-2xl p-6 mx-auto mb-6">
+            <img 
+              src={logo} 
+              alt="2D Creation Logo" 
+              className="h-32 md:h-48"
+            />
+          </div>
           <p className="text-2xl md:text-3xl text-accent font-semibold">
             Global Apparel Sourcing
           </p>
