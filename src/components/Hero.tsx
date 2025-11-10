@@ -12,7 +12,7 @@ const Hero = () => {
   });
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Animated Background */}
       <motion.div
         className="absolute inset-0 z-0"
@@ -21,7 +21,7 @@ const Hero = () => {
         transition={{ duration: 20, repeat: Infinity, repeatType: "reverse" }}
       >
         <div 
-          className="w-full h-full bg-cover bg-center opacity-20"
+          className="w-full h-full bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url(${heroBg})` }}
         />
       </motion.div>
@@ -42,7 +42,7 @@ const Hero = () => {
               className="h-32 md:h-48"
             />
           </div>
-          <p className="text-2xl md:text-3xl text-accent font-semibold">
+          <p className="text-2xl md:text-3xl text-primary font-semibold">
             Global Apparel Sourcing
           </p>
         </motion.div>
@@ -50,7 +50,7 @@ const Hero = () => {
         {/* Stats Grid */}
         <motion.div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -94,7 +94,7 @@ const Hero = () => {
         >
           <button
             onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-            className="bg-white text-primary px-10 py-4 rounded-lg text-xl font-bold hover:bg-accent hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="bg-primary text-white px-10 py-4 rounded-lg text-xl font-bold hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Quote
           </button>
@@ -132,15 +132,15 @@ const StatCard = ({ icon: Icon, value, label, delay, inView }: any) => {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={inView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.5, delay }}
-      className="bg-white rounded-2xl p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+      className="bg-white rounded-2xl p-4 md:p-8 text-center shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
     >
-      <div className="w-16 h-16 mb-4 bg-accent/20 rounded-xl flex items-center justify-center mx-auto">
-        <Icon className="w-8 h-8 text-accent" />
+      <div className="w-12 h-12 md:w-16 md:h-16 mb-2 md:mb-4 bg-accent/20 rounded-xl flex items-center justify-center mx-auto">
+        <Icon className="w-6 h-6 md:w-8 md:h-8 text-accent" />
       </div>
-      <h3 className="text-4xl md:text-5xl font-bold text-accent mb-2">
+      <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold text-accent mb-1 md:mb-2">
         {isNumber ? `${count}+` : value}
       </h3>
-      <p className="text-lg font-semibold text-primary">{label}</p>
+      <p className="text-sm md:text-lg font-semibold text-primary">{label}</p>
     </motion.div>
   );
 };
