@@ -42,7 +42,7 @@ const Hero = () => {
               className="h-32 md:h-48"
             />
           </div>
-          <p className="text-2xl md:text-3xl text-primary font-semibold">
+          <p className="text-3xl md:text-4xl lg:text-5xl text-primary font-semibold">
             Global Apparel Sourcing
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ const Hero = () => {
           <StatCard
             icon={Gauge}
             value="20+"
-            label="Years Experience"
+            label="Years Excellence"
             delay={0.6}
             inView={inView}
           />

@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Linkedin, Instagram, Mail } from "lucide-react";
+import { Facebook, Linkedin, Instagram, Mail } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: MessageCircle, href: "https://wa.me/", label: "WhatsApp" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Mail, href: "mailto:Karthick@2dcreation.in", label: "Email" },
